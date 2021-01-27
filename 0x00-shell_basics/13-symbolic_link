@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo ln /bin/ls __ls__
+ln /bin/ls __ls__
