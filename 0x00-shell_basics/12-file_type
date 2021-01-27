@@ -1,1 +1,2 @@
-cd /tmp && type iamafile
+#!/bin/bash
+type /tmp/iamafile
