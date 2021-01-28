@@ -1,2 +1,2 @@
 #!/bin/bash
-$USR betty
+su betty
