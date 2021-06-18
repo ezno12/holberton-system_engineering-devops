@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+#set n to 1
+n=1
+
+#continue until $n equals 20
+while [ $n -le 20 ]
+do
+   case $n in
+   4) 
+        echo "$n"
+        echo "bad luck from China"
+    ;;
+   9) 
+        echo "$n"
+        echo "bad luck from Japan"
+    ;;
+   17) 
+        echo "$n"
+        echo "bad luck from Italy"
+    ;;
+   *)
+        echo "$n"
+    esac
+   n=$((n + 1)) #increments $n
+done
