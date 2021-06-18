@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#set n to 0
+n=0
+
+#continue until $n equals 10
+until [ ! $n -lt 10 ]
+do
+   echo "Holberton School"
+   n=$((n + 1)) #increments $n
+done
