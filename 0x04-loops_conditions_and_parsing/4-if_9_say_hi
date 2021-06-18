@@ -5,15 +5,12 @@ n=1
 #continue until $n equals 10
 while [ $n -lt 10 ]
 do
-   if  [ $n -eq 4 ]
+   if  [ $n -eq 9 ]
    then 
-        echo "bad luck"
-   
-   elif [ $n -eq 8 ]
-   then
-        echo "good luck"
-   else
         echo "Holberton School"
-    fi
+        echo "Hi"
+    else
+        echo "Holberton School"
+   fi
    n=$((n + 1)) #increments $n
 done
