@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# read file
 
 while read -r line
 do
