@@ -1,15 +1,17 @@
-for n in {1..100}
+#!/usr/bin/env bash
+# fizz buzz
+for i in {1..100}
 do
-	if [ $((n % 3)) == 0 ] && [ $((n % 5)) == 0 ]
+	if [ $((i % 3)) == 0 ] && [ $((i % 5)) == 0 ]
 	then 
 		echo "FizzBuzz"
-	elif [ $((n % 3)) == 0 ]
+	elif [ $((i % 3)) == 0 ]
 	then
 		echo "Fizz"
-	elif [ $((n % 5)) == 0 ]
+	elif [ $((i % 5)) == 0 ]
 	then
 		echo "Buzz"
 	else
-		echo $n
+		echo $i
 	fi
 done
