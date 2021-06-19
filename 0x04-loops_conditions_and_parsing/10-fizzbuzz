@@ -1,13 +1,9 @@
 #!/usr/bin/env bash
-#set n to 1
-n=1
-
-#continue until $n equals 100
-while [ $n -le 100 ]
+for n in {1..100}
 do
    if  [ $((n % 5)) == 0 ] && [ $((n % 3)) == 0 ]
    then 
-        echo "FizzB"
+        echo "FizzBuzz"
    
    elif [ $((n % 3)) == 0 ]
    then
