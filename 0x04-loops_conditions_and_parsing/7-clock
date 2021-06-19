@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 #set n to 1
-n=1
+n=0
  
 #continue until $n equals 12
 while [ $n -le 12 ]
 do
    echo "Hour: $n"
-   
+   i=1
    while [ "$i" -lt 60 ]
    do
         echo "$i"
