@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# prevents loop from ending if kill signal is sent
 while :
 do
 	echo "To infinity and beyond"

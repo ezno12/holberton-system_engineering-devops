@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
+# using `pgrep` instead of `ps`, shows all process names containing `bash`
 pgrep -l bash

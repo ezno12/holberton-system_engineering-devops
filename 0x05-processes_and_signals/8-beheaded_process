@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
+# uses -9 to kill a process even if it traps SIGTERM AND SIGKILL
 pkill -SIGKILL   -f ./7-highlander

@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# prints string with a 2 second pause between each iteration
+# the ':' takes the place of an actual condition so that this loops infinitely
 while :
 do
 	echo "To infinity and beyond"

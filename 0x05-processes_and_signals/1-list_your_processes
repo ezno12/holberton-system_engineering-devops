@@ -1,2 +1,8 @@
 #!/usr/bin/env bash
+# ps - show running processes:
+# a - shows running processes for all users.
+# u - includes the user/owner of each process.
+# x - includes processes not attached to a terminal
+# `--forest` displays in process heirarchy
+
 ps -a -u -x -f
