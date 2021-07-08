@@ -1,0 +1,7 @@
+
+#!/usr/bin/env bash
+# config ip for local host and FB
+cp /etc/hosts ~/hosts.new
+sed -i "s/127.0.0.1\tlocalhost/127.0.0.2\tlocalhost/g" ~/hosts.new
+sed -i -e "\$a8.8.8.8\tfacebook.com\n" ~/hosts.new
+cp -f ~/hosts.new /etc/hosts
