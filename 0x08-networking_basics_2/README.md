@@ -14,7 +14,9 @@ The focus of this project is to learn:
 * <a href="https://www.thegeekstuff.com/2012/04/nc-command-examples/">Netcat examples</a>
 
 ## File Descriptions
-Each file contains an answer to the corresponding project task question
+- ``0-change_your_home_IP``: a Bash script change IP adress.
+- ``1-show_attached_IPs``: a Bash script that displays all active IPv4 IPs on the machine it’s executed on.
+- ``100-port_listening_on_localhost``: a Bash script that listens on port 98 on localhost.
 
 ## Author
 Bassem Yahia
