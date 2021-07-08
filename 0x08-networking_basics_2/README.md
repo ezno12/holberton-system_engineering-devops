@@ -9,9 +9,9 @@ The focus of this project is to learn:
 
 ## Helpful Links
 * <a href="https://en.wikipedia.org/wiki/Localhost">What is localhost</a>
-* <a href="https://en.wikipedia.org/wiki/Localhost">What is 0.0.0.0</a>
-* <a href="https://en.wikipedia.org/wiki/Localhost">What is the hosts file</a>
-* <a href="https://en.wikipedia.org/wiki/Localhost">Netcat examples</a>
+* <a href="https://en.wikipedia.org/wiki/0.0.0.0">What is 0.0.0.0</a>
+* <a href="https://www.makeuseof.com/tag/modify-manage-hosts-file-linux/">What is the hosts file</a>
+* <a href="https://www.thegeekstuff.com/2012/04/nc-command-examples/">Netcat examples</a>
 
 ## File Descriptions
 Each file contains an answer to the corresponding project task question
