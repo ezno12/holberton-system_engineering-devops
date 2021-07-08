@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# displays active IPv4 IP
+ifconfig -a | grep -e 'inet addr' | cut -d ':' -f2 | cut -d ' ' -f1
