@@ -1,4 +1,4 @@
-Holberton School - 0x0B. Networking basics #1
+#Holberton School - 0x0B. Networking basics #1
 ## Description
 
 The focus of this project is to learn:
