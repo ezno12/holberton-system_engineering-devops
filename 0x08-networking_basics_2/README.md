@@ -7,6 +7,11 @@ The focus of this project is to learn:
 * what /etc/hosts is.
 * how to display your machine's active network interfaces
 
+## Helpful Links
+* <a href="https://en.wikipedia.org/wiki/Localhost">What is localhost</a>
+* <a href="https://en.wikipedia.org/wiki/Localhost">What is 0.0.0.0</a>
+* <a href="https://en.wikipedia.org/wiki/Localhost">What is the hosts file</a>
+* <a href="https://en.wikipedia.org/wiki/Localhost">Netcat examples</a>
 
 ## File Descriptions
 Each file contains an answer to the corresponding project task question
