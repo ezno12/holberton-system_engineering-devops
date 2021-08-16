@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# generates a public/private 
+ssh-keygen -f ./holberton -N betty -b 4096
