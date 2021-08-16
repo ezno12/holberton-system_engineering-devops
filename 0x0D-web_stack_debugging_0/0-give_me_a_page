@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#install appache2 and make output to Hello Holberton
+apt-get install apache2 -y
+systemctl start apache2.service
+echo "Hello Holberton" > /var/www/html/index.html
+echo "ServerName localhost" >> /etc/apache2/apache2.conf
