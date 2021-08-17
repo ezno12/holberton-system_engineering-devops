@@ -6,3 +6,4 @@ echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/404.html
 line="\\\terror_page 404 /404.html;\n\tlocation = /404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}"
 sudo sed -i "26 i $line" /etc/nginx/sites-available/default
 sudo service nginx restart
+sudo service nginx reload
