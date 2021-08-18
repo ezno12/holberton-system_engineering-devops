@@ -3,6 +3,7 @@
 # when sent a GET request at it's root, sends the response "Holberton School"
 sudo apt-get update
 sudo apt-get -y install nginx
+sudo service nginx
 sudo chown -R "$USER":"$USER" /var/www/
 sudo chown -R "$USER":"$USER" /etc/nginx
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
