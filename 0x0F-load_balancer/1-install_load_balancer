@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Installs and configures haproxy on a load balance server
+sudo apt-get update
+sudo add-apt-repository -y ppa:vbernat/haproxy-2
+sudo apt-get update
+sudo apt-get dist-upgrade
+sudo apt-get install -y  haproxy
+
+echo "ENABLED=1" >> /etc/default/haproxy
+
+cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.bak
+sudo sed -ie "\$alisten webservers 0.0.0.0:80\n\tmode http\n\tbalance roundrobin\n\toption httpclose\n\toption forwardfor\n\tserver 108-web-01 54.159.152.54:80 check\n\tserver 108-web-02 54.82.219.75:80 check\n" /etc/haproxy/haproxy.cfg
+sudo service haproxy start
