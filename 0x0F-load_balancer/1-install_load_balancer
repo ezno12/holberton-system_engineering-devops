@@ -9,5 +9,5 @@ sudo apt-get install -y  haproxy
 echo "ENABLED=1" >> /etc/default/haproxy
 
 cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.bak
-sudo sed -ie "\$alisten webservers 0.0.0.0:80\n\tmode http\n\tbalance roundrobin\n\toption httpclose\n\toption forwardfor\n\tserver 108-web-01 54.159.152.54:80 check\n\tserver 108-web-02 54.82.219.75:80 check\n" /etc/haproxy/haproxy.cfg
+sudo sed -ie "\$alisten webservers *:80\n\tmode http\n\tbalance roundrobin\n\toption httpclose\n\toption forwardfor\n\tserver 108-web-01 54.159.152.54:80 check\n\tserver 108-web-02 54.82.219.75:80 check\n" /etc/haproxy/haproxy.cfg
 sudo service haproxy start
