@@ -18,5 +18,5 @@ backend webserver
     balance roundrobin
     server 2689-web-01 35.185.20.113 check
     server 2689-web-02 34.75.130.100:80 check
-" | sudo tee /etc/haproxy/haproxy.cfg
+" >> sudo tee /etc/haproxy/haproxy.cfg
 sudo service haproxy start
