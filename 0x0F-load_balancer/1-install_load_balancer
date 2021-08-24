@@ -1,12 +1,20 @@
 #!/usr/bin/env bash
 # Installs and configures haproxy on a load balance server
-sudo apt-get -y update
-sudo apt-get -y upgrade
-sudo apt-get -y install nginx
-sudo chown -R "$USER":"$USER" /var/www/
-sudo chown -R "$USER":"$USER" /etc/nginx
-echo "Holberton School" > /var/www/html/index.nginx-debian.html
-line="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=dQw4w9WgXcQ permanent;"
-sudo sed -i "26i $line" /etc/nginx/sites-available/default
-sed -i '/listen 80 default_server;/a add_header X-Served-By $hostname;' /etc/nginx/sites-available/default
-sudo service nginx restart
+apt-get -y install software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-2.0
+apt-get -y update
+apt-get -y install haproxy=2.0.\*
+
+echo "ENABLED=1" >> /etc/default/haproxy
+
+echo "
+frontend load_balancer
+    bind *:80
+    mode http
+    default_backend webserver
+backend webserver
+    balance roundrobin
+    server 2152-web-01 35.196.31.36:80 check
+    server 2152-web-02 35.237.103.48:80 check
+" >> /etc/haproxy/haproxy.cfg
+service haproxy restart
