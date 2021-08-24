@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # installs nginx listening at port 80
 # when sent a GET request at it's root, sends the response "Holberton School"
-sudo apt-get update
-apt update -y && apt upgrade -y
-apt install nginx -y
-echo "Holberton School" >/var/www/html/index.nginx-debian.html
-service nginx restart
+sudo apt-get update -y && sudo apt-get upgrade -y
+sudo apt-get install -y nginx
+sudo chown -R "$USER":"$USER" /var/www/
+sudo chown -R "$USER":"$USER" /etc/nginx
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+sudo service nginx restart 
