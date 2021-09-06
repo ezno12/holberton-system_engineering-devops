@@ -9,7 +9,6 @@ The focus of this project is to learn how to install and implement a firewall.
 
 
 ## File Descriptions
-- `0-firewall_ABC`: answers to questions for task 0
 - `1-block_all_incoming_traffic_but`: ufw commands used to configure firewall on webserver
 ---
 ## Author
