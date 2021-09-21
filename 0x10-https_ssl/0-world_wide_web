@@ -2,19 +2,23 @@
 # displays record type of selected subdomain and where it points to
 domain="$1"
 subdomain="$2"
-sub_list=("www" "lb-01" "web-01" "web-02")
 
-fetch_record () {
-	result=$(dig "$2"."$1" | grep -A1 ";; ANSWER SECTION:" | tail -1)
-	record_type=$(echo "$result" | awk '{print $4}')
-	destination=$(echo "$result" | awk '{print $5}')
-	echo "The subdomain $2 is a $record_type record and points to $destination"
+lookup_host() {
+    host_record=$(
+        dig "$1" | grep -A1 'ANSWER SECTION:' | tail -n 1
+    )
+
+    echo "$host_record" |
+    awk '{print "The subdomain","'"$subdomain"'","is a",$4,"record and points to",$5}'
 }
 
-if [ "$subdomain"  ]; then
-	fetch_record "$domain" "$subdomain"
-else
-	for sub in "${sub_list[@]}"; do
-		fetch_record "$domain" "$sub"
-	done
+if [ "$domain" ] && [ "$subdomain" ] ; then
+    host="$subdomain.$domain"
+    lookup_host "$host"
+elif [ "$domain" ] ; then
+    def_subdomains=(www lb-01 web-01 web-02)
+    for subdomain in "${def_subdomains[@]}" ; do
+        host="$subdomain.$domain"
+        lookup_host "$host"
+    done
 fi
