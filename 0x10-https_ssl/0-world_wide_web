@@ -1,24 +1,13 @@
 #!/usr/bin/env bash
 # displays record type of selected subdomain and where it points to
-domain="$1"
-subdomain="$2"
-
-lookup_host() {
-    host_record=$(
-        dig "$1" | grep -A1 'ANSWER SECTION:' | tail -n 1
-    )
-
-    echo "$host_record" |
-    awk '{print "The subdomain","'"$subdomain"'","is a",$4,"record and points to",$5}'
-}
-
-if [ "$domain" ] && [ "$subdomain" ] ; then
-    host="$subdomain.$domain"
-    lookup_host "$host"
-elif [ "$domain" ] ; then
-    def_subdomains=(www lb-01 web-01 web-02)
-    for subdomain in "${def_subdomains[@]}" ; do
-        host="$subdomain.$domain"
-        lookup_host "$host"
-    done
+DOMAIN=$1
+SUBDOMAINS="www lb-01 web-01 web-02"
+if [ "$2" ]; then
+	SUBDOMAINS=$2
 fi
+for SUBDOMAIN in $SUBDOMAINS; do
+	URL="$SUBDOMAIN"."$DOMAIN"
+	RECORD_TYPE=$(dig +noall +answer "$URL" | awk '{print $4}')
+	IP=$(dig +short "$URL")
+	echo "The subdomain $SUBDOMAIN is a $RECORD_TYPE record and points to $IP"
+done
